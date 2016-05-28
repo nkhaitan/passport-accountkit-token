@@ -1,6 +1,6 @@
 {
   "name": "passport-accountkit-token",
-  "version": "3.2.0",
+  "version": "1.0.0",
   "description": "Account kit token authentication strategy for Passport",
   "main": "lib/index.js",
   "scripts": {
@@ -9,14 +9,10 @@
     "prepublish": "npm run compile",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
-  "keywords": [
-    "passport",
-    "facebook",
-    "auth",
-    "authn",
-    "authentication",
-    "identity"
-  ],
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/nkhaitan/passport-accountkit-token.git"
+  },
   "dependencies": {
     "passport-oauth": "1.0.0"
   },
