@@ -1,21 +1,9 @@
-# passport-facebook-token
+# passport-accountkit-token
 
-![Build Status](https://img.shields.io/travis/drudge/passport-facebook-token.svg)
-![Coverage](https://img.shields.io/coveralls/drudge/passport-facebook-token.svg)
-
-![Downloads](https://img.shields.io/npm/dm/passport-facebook-token.svg)
-![Downloads](https://img.shields.io/npm/dt/passport-facebook-token.svg)
-![npm version](https://img.shields.io/npm/v/passport-facebook-token.svg)
-![License](https://img.shields.io/npm/l/passport-facebook-token.svg)
-
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![dependencies](https://img.shields.io/david/drudge/passport-facebook-token.svg)
-![dev dependencies](https://img.shields.io/david/dev/drudge/passport-facebook-token.svg)
-
-[Passport](http://passportjs.org/) strategy for authenticating with [Facebook](http://www.facebook.com/)
+[Passport](http://passportjs.org/) strategy for authenticating with [Facebook Account Kit](http://www.facebook.com/)
 access tokens using the OAuth 2.0 API.
 
-This module lets you authenticate using Facebook in your Node.js applications.
+This module lets you authenticate using Facebook Account Kit in your Node.js applications.
 By plugging into Passport, Facebook authentication can be easily and
 unobtrusively integrated into any application or framework that supports
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
@@ -23,7 +11,7 @@ unobtrusively integrated into any application or framework that supports
 
 ## Installation
 
-    $ npm install passport-facebook-token
+    $ npm install passport-accountkit-token
 
 ## Usage
 
@@ -35,9 +23,9 @@ accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a app ID and app secret.
 
 ```js
-var FacebookTokenStrategy = require('passport-facebook-token');
+var AccountKitTokenStrategy = require('passport-facebook-token');
 
-passport.use(new FacebookTokenStrategy({
+passport.use(new AccountKitTokenStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET
   }, function(accessToken, refreshToken, profile, done) {
@@ -50,11 +38,11 @@ passport.use(new FacebookTokenStrategy({
 
 ### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'facebook-token'` strategy, to authenticate requests.
+Use `passport.authenticate()`, specifying the `'accountkit-token'` strategy, to authenticate requests.
 
 ```js
-app.post('/auth/facebook/token',
-  passport.authenticate('facebook-token'),
+app.post('/auth/accounkit/token',
+  passport.authenticate('accountkit-token'),
   function (req, res) {
     // do something with req.user
     res.send(req.user? 200 : 401);
@@ -68,7 +56,7 @@ Or using Sails framework:
 // api/controllers/AuthController.js
 module.exports = {
   facebook: function(req, res) {
-    passport.authenticate('facebook-token', function(error, user, info) {
+    passport.authenticate('accountkit-token', function(error, user, info) {
       // do stuff with user
       res.ok();
     })(req, res);
@@ -115,13 +103,6 @@ Host: server.example.com
 
 access_token=base64_access_token_string
 ```
-  
-
-## Credits
-
-  - [Nicholas Penree](http://github.com/drudge)
-  - [Jared Hanson](http://github.com/jaredhanson)
-  - [Eugene Obrezkov](http://github.com/ghaiklor)
 
 ## License
 
