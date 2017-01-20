@@ -23,11 +23,10 @@ accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a app ID and app secret.
 
 ```js
-var AccountKitTokenStrategy = require('passport-facebook-token');
-
+var AccountKitTokenStrategy = require('passport-accountkit-token');
 passport.use(new AccountKitTokenStrategy({
-    clientID: FACEBOOK_APP_ID,
-    clientSecret: FACEBOOK_APP_SECRET
+        clientID: config.FACEBOOK_APP_ID, 
+        clientSecret: config.ACCOUNTKIT_SECRET
   }, function(accessToken, refreshToken, profile, done) {
     User.findOrCreate({facebookId: profile.id}, function (error, user) {
       return done(error, user);
